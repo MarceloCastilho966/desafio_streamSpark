@@ -26,4 +26,4 @@ while i < horas:
             json_file.write(json_data + '\n')
         os.remove(file) ## O arquivo XML é deletado, para evitar erros
     i+=1
-    time.sleep(2) ## Intervalo entre um Download e outro
+    time.sleep(3600) ## Intervalo entre um Download e outro
