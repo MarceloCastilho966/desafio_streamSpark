@@ -51,6 +51,7 @@ select = df_json.selectExpr("CAST (current_observation.location AS STRING) AS Lo
 ```
 
 ## 5. Salvar os dados no MongoDB
-![Captura de tela de 2022-11-01 19-37-48](https://user-images.githubusercontent.com/97556793/199355293-2bdc4296-b4d8-43cd-8f7a-ffe19fce0b25.png)
+![Captura de tela de 2022-11-02 11-54-05](https://user-images.githubusercontent.com/97556793/199522902-b40a8c36-d77e-4ddf-a737-f21267334aa1.png)
+
 
 
