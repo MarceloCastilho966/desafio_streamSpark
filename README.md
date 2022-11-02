@@ -31,7 +31,7 @@ while i < horas:
             json_file.write(json_data + '\n')
         os.remove(file) 
     i+=1
-    time.sleep(2)
+    time.sleep(60)
 ```
 
 ## 3. Criar uma Stream em spark dos arquivos baixados:
@@ -51,6 +51,16 @@ select = df_json.selectExpr("CAST (current_observation.location AS STRING) AS Lo
 ```
 
 ## 5. Salvar os dados no MongoDB
+```
+select.writeStream\
+    .format('mongodb')\
+    .option('spark.mongodb.connection.uri', 'mongodb://127.0.0.1:27017/')\
+    .option('spark.mongodb.database', 'marcelo')\
+    .option('spark.mongodb.collection', 'weather')\
+    .option("checkpointLocation", checkpoint)\
+    .outputMode("append").start().awaitTermination()
+```
+
 ![Captura de tela de 2022-11-02 11-54-05](https://user-images.githubusercontent.com/97556793/199522902-b40a8c36-d77e-4ddf-a737-f21267334aa1.png)
 
 
